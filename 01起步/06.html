@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+
+<div id="app">
+        {{msg}}
+        <button v-on:click="play">点我</button>
+</div>
+
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    // 创建vue 实例，OOP
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+            msg:'头晕脑胀'
+        },
+        methods:{
+            play:function () { // 不要使用箭头函数
+                // 这个this 别省略
+                this.msg = '一口气上五楼'
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

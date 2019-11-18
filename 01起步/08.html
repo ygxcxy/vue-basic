@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+
+<!--v-model 输入的数据能取修改数据项里面数据-->
+<div id="app">
+<!--    复用组件-->
+    <my-comp></my-comp>
+    <my-comp></my-comp>
+    <my-comp></my-comp>
+    <my-comp></my-comp>
+    <my-comp></my-comp>
+</div>
+
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    // 定义组件
+    Vue.component('my-comp',{
+        template:'<li>我是一个骄傲的组件</li>'
+    })
+
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+
+    })
+
+</script>
+
+</body>
+</html>
