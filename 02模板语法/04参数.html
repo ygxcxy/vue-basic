@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+
+<!-- 调用js 方法 虽然可以，但是这样就加入了大量的逻辑在视图展示本身的地方，如果业务复杂，少量的可以-->
+<div id="app"  >
+    <a href="" v-bind:href="url">一个神奇的网站</a>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+           url:'http://www.qiudaozhang.com'
+        }
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+
+<!-- 缩写 v-bind v-on 很累 v-bind:title="title 简写:title
+v-on:click="show" 简写为@click
+-->
+<div id="app"  >
+    <button  :title="title" @click="show">我是按钮</button>
+
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+           url:'http://www.qiudaozhang.com',
+            title:'帅的人都要抄代码'
+        },
+        methods:{
+            show:function () {
+                console.log(2323)
+            }
+        }
+    })
+</script>
+</body>
+</html>

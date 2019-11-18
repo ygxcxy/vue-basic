@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+
+<!-- prevent 组织默认提交，  修饰符-->
+<div id="app"  >
+    <form action="" v-on:submit.prevent="show">
+        <input type="submit" value="提交" >
+    </form>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+           url:'http://www.qiudaozhang.com'
+        },
+        methods:{
+            show:function () {
+                console.log(2323)
+            }
+        }
+
+    })
+</script>
+</body>
+</html>
