@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 这个括号不能省略， 这样才知道按照vue的语法解析 -->
+<div id="app" :class="{active:isActive}">
+    {{msg}}
+</div>
+
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+
+
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+           isActive:true,
+            msg:'真的头痛'
+        }
+
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"  >
+<!--  v-show 它只是修改样式，并不会重构dom结构  -->
+    <div v-show="isShow">
+            {{msg}}
+    </div>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+            isShow:true,
+            msg:'真的头痛',
+            revMsg:'一口气上五楼'
+        }
+    })
+</script>
+</body>
+</html>

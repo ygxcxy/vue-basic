@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 这个括号不能省略， 这样才知道按照vue的语法解析 -->
+<div id="app"  >
+    <span v-if="isActive">{{msg}}</span>
+<!--    如果前面不满足，那么就执行后面  这个v-else 紧跟前面的if -->
+    <span v-else>{{revMsg}}</span>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+           isActive:true,
+            msg:'真的头痛',
+            revMsg:'一口气上五楼'
+        }
+    })
+</script>
+</body>
+</html>

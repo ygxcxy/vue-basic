@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 这个括号不能省略， 这样才知道按照vue的语法解析 -->
+<div id="app"  >
+    <template v-if="loginType === 'username'">
+        <label for="username"></label>
+        <input type="text" id="username" placeholder="请输入用户名">
+    </template>
+    <template v-else>
+        <label for="email"></label>
+        <input type="text" id="email" placeholder="请输入邮箱">
+    </template>
+    <button @click="changeLogin()">切换登录模式</button>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+            loginType: 'username',
+            msg:'真的头痛',
+            revMsg:'一口气上五楼'
+        },
+        methods:{
+            changeLogin:function () {
+                if(this.loginType === 'username'){
+                    this.loginType = 'email'
+                } else {
+                    this.loginType = 'username'
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

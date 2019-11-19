@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+        .love{
+            font-size: 32px;
+            color: orange;
+        }
+
+        .not-love{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<!-- 这里面写的内容不带引号代表从数据项里面检索，带了引号就是字面值-->
+<div id="app" :class="[isLove ? act:'not-love']">
+    {{msg}}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        // 如果这个属性名字包含类似-这种符号，你记得用引号包裹
+        data:{
+            isLove:true,
+            act:'active',
+            msg:'真的丝滑'
+
+        }
+    })
+</script>
+</body>
+</html>

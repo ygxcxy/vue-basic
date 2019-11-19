@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+        .love{
+            font-size: 32px;
+            color: orange;
+        }
+        .not-love{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <my-comp :class="[love,act]"></my-comp>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    Vue.component('my-comp',{
+        template:'<div>我是一个孤独的组件</div>'
+    })
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            love:'love',
+            act:'active'
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 如果逻辑超级简单可以在这里就完成-->
+<div id="app"  >
+   <button @click="counterMe()">访问次数：{{counter}}</button>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+         counter:0
+        },
+        methods:{
+            counterMe:function () {
+                this.counter += 1
+            }
+        }
+    })
+</script>
+</body>
+</html>

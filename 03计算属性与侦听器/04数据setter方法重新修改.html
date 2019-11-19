@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+
+<!-- 普通字面值和可以结合插值表达式使用 -->
+<div id="app">
+   {{msgCom}}
+</div>
+
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+           msg:'hello',
+           message:'a'
+        },
+        computed:{
+            // 如果通过这里修改msgCom 值，这里的设置的内容可以加入逻辑
+            msgCom:{
+               get:function(){
+                    return this.msg
+                },
+               set:function (v) {
+                   this.msg = v + ' 重新修改 '
+               }
+            }
+        }
+
+    })
+
+</script>
+
+</body>
+</html>

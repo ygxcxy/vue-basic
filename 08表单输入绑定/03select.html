@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"  >
+    <select name="" id="" v-model="select">
+        <option value=""  >-请选择-</option>
+        <option value="" v-for="s in selects" :value="s">{{s}}</option>
+    </select>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+            select:'',
+            selects:[
+                '篮球',
+                '组球',
+                '拍球',
+            ]
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <link rel="stylesheet" href="../css/bulma.min.css">
+</head>
+<body>
+<div id="app"  >
+    用户名：
+    <input type="text" v-model="inputName" >
+    <table class="table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>邮箱</th>
+                <th>电话</th>
+                <th>地址</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="user in usersComp">
+                <td>{{user.name}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+            inputName:'',
+            users:[
+                {
+                    "_id": "5dd38d6bb4bb9fa9cd5a3ad7",
+                    "name": "Horn Strickland",
+                    "gender": "male",
+                    "email": "hornstrickland@pholio.com",
+                    "phone": "+1 (993) 427-3511",
+                    "address": "646 Cass Place, Belmont, Louisiana, 5140"
+                },
+                {
+                    "_id": "5dd38d6b14619c31dbd20c62",
+                    "name": "Earnestine Berg",
+                    "gender": "female",
+                    "email": "earnestineberg@pholio.com",
+                    "phone": "+1 (829) 555-3279",
+                    "address": "947 Billings Place, Conestoga, Maryland, 7131"
+                },
+                {
+                    "_id": "5dd38d6b9dcda2589c79c7f3",
+                    "name": "Daniels Justice",
+                    "gender": "male",
+                    "email": "danielsjustice@pholio.com",
+                    "phone": "+1 (827) 480-2558",
+                    "address": "251 Beadel Street, Bradenville, Guam, 3593"
+                },
+                {
+                    "_id": "5dd38d6bded0b076eec61e01",
+                    "name": "Jodi Booth",
+                    "gender": "female",
+                    "email": "jodibooth@pholio.com",
+                    "phone": "+1 (863) 459-2637",
+                    "address": "873 Gatling Place, Dixonville, New Hampshire, 1237"
+                },
+                {
+                    "_id": "5dd38d6b56fe7c9af6a7cf05",
+                    "name": "Helene Jennings",
+                    "gender": "female",
+                    "email": "helenejennings@pholio.com",
+                    "phone": "+1 (916) 469-2532",
+                    "address": "543 Dearborn Court, Dixie, New York, 2743"
+                }
+            ]
+        },
+        computed:{
+            usersComp:function () {
+                var inputName = this.inputName
+                return this.users.filter(function (value) {
+                    if(inputName === '')
+                        return true
+                    return value.name.match(inputName)
+                })
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+
+<!-- 普通字面值和可以结合插值表达式使用 -->
+<div id="app">
+   {{msgCom()}}
+</div>
+
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+
+   // 为什么用计算属性，而非methods 计算属性是基于它们的响应式依赖进行缓存的(缓存 如果这个依赖关系没有变，直接使用已经计算出来的值就可以了)
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+           msg:'hello'
+        },
+        methods:{
+            msgCom:function(){
+                // 逻辑转义到这里
+                return this.msg.toString().toUpperCase()
+            }
+        }
+
+    })
+
+</script>
+
+</body>
+</html>

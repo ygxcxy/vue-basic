@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+        .love{
+            font-size: 32px;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 多个class 绑定使用逗号分割即可 -->
+<div id="app" :class="classObj">
+    {{msg}}
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+            classObj:{
+                active:true,
+                love:true
+            },
+            msg:'真的丝滑'
+
+        }
+    })
+</script>
+</body>
+</html>
