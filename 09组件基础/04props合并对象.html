@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"  >
+    <blog :blog="blog"></blog>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('blog',{
+        props:['blog'],
+        template: '<div><h2>{{blog.title}}</h2><div>{{blog.summary}}</div></div>'
+    })
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+           blog:{
+               title:'开心',
+               summary: '摘要'
+           }
+        }
+    })
+</script>
+</body>
+</html>

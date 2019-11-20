@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+<div id="app"  >
+    <my-comp v-model="msg"></my-comp>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div>
+
+</div>
+<script>
+    Vue.component('my-comp',{
+        props:['msg'],
+        template: `
+               <input :value="msg"  v-on:input="$emit('input', $event.target.value)">
+            `
+    })
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'初始化'
+        },
+    })
+</script>
+</body>
+</html>

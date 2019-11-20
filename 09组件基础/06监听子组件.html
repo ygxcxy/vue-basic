@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"  >
+    <div :style="{fontSize: blogFontSize + 'em'}">
+        <blog v-for="blog in blogs" :blog="blog"   @enlarge-text="blogFontSize += 0.1"></blog>
+    </div>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div>
+
+</div>
+<script>
+    // button添加点击触发父组件的规则
+    Vue.component('blog',{
+        props:['blog'],
+        template: `
+                <div><h2>{{blog.title}}</h2><div>{{blog.summary}}</div>
+                <button @click="$emit('enlarge-text')">放大</button>
+                </div>
+            `
+    })
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+            blogs:[
+                {
+                    title:'开心',
+                    summary: '摘要'
+                },
+                {
+                    title:'看看书',
+                    summary: '滚滚滚'
+                }
+            ],
+            blogFontSize: 1
+        }
+    })
+</script>
+</body>
+</html>

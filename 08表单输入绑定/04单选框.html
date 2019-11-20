@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"  >
+    <input type="radio" value="one" v-model="picked" id="one"> <label for="one">一</label>
+    <input type="radio" value="two" v-model="picked" id="two"> <label for="two">二</label>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//绑定了上面的容器div
+        data:{
+            picked: ''
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 入门</title>
+</head>
+<body>
+<div id="app"  >
+    <button @click="currentTab = 'my-a'">my-a</button>
+    <button @click="currentTab = 'my-b'">my-b</button>
+    <button @click="currentTab = 'my-c'">my-c</button>
+
+<!--    v-bind:is 决定 生效组件名是哪个  -->
+    <component v-bind:is="currentTabComp"></component>
+</div>
+<!--1 引入vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    Vue.component('my-a',{
+        template:'<div>a</div>'
+    })
+    Vue.component('my-b',{
+        template:'<div>b</div>'
+    })
+    Vue.component('my-c',{
+        template:'<div>c</div>'
+    })
+
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            currentTab:'my-a'
+        },
+        computed:{
+            currentTabComp:function () {
+                return this.currentTab
+            }
+        }
+    })
+</script>
+</body>
+</html>
